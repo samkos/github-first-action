@@ -16,3 +16,8 @@ jobs:
             - name: Output information
               run: |
                 echo "Live URL: ${{ steps.deploy.outputs.website-url }}"
+            - name: pop up url
+              uses: actions/run-pup-action@v1
+              with:
+                url: 'https://jazzido.com'
+                selector: 'b'
