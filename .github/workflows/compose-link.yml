@@ -5,18 +5,35 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Get code
-              uses: actions/checkout@v3
+                uses: actions/checkout@v3
             - name: Output contents
-              run: ls
+                run: ls
             - name: compute link
-              id: deploy
-              uses: ./.github/actions/compose-links-javascript
-              with:
-                  bucket: gha-custom-action-hosting
+                id: deploy
+                uses: ./.github/actions/compose-links-javascript
+                with:
+                    bucket: gha-custom-action-hosting
             - name: Output information
-              run: |
+                run: |
                 echo "Live URL: ${{ steps.deploy.outputs.website-url }}"
             - name: Add URL to workflow summary
-              run: |
-                  echo "## Check job status" >> $GITHUB_STEP_SUMMARY
-                  echo "Download the URL [here](${{ steps.deploy.outputs.website-url }})" >> $GITHUB_STEP_SUMMARY
+                run: |
+                    echo "## Check job status" >> $GITHUB_STEP_SUMMARY
+                    echo "Download the URL [here](${{ steps.deploy.outputs.website-url }})" >> $GITHUB_STEP_SUMMARY
+            - name: job submission
+               run : |
+                 echo "## submitting job..." >> $GITHUB_STEP_SUMMARY
+                 sleep 10     
+                 echo "## job submittted..." >> $GITHUB_STEP_SUMMARY
+            - name: job building
+               run : |
+                 echo "## building job..." >> $GITHUB_STEP_SUMMARY
+                 sleep 10     
+                 echo "## job built..." >> $GITHUB_STEP_SUMMARY
+            - name: job running
+               run : |
+                 echo "## job starting..." >> $GITHUB_STEP_SUMMARY
+                 sleep 10     
+                 echo "## job running..." >> $GITHUB_STEP_SUMMARY
+                 sleep 20     
+                 echo "## job done..." >> $GITHUB_STEP_SUMMARY
