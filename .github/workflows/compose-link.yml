@@ -13,7 +13,6 @@ jobs:
               uses: ./.github/actions/compose-links-javascript
               with:
                   bucket: gha-custom-action-hosting
-                  dist-folder: ./dist
             - name: Output information
               run: |
                 echo "Live URL: ${{ steps.deploy.outputs.website-url }}"
