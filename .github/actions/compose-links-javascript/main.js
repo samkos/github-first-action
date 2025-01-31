@@ -12,7 +12,7 @@ function run() {
   // const s3Uri = `s3://${bucket}`;
   // exec.exec(`aws s3 sync ${distFolder} ${s3Uri} --region ${bucketRegion}`);
 
-  const websiteUrl = `http:// amazonaws.com`;
+  const websiteUrl = `http://www.amazonaws.com`;
   core.setOutput('website-url', websiteUrl); // echo "website-url=..." >> $GITHUB_OUTPUT
 }
 
