@@ -18,5 +18,5 @@ jobs:
                 echo "Live URL: ${{ steps.deploy.outputs.website-url }}"
             - name: Add URL to workflow summary
               run: |
-                  echo "## Clickable URL Artifact" >> $GITHUB_STEP_SUMMARY
-                  echo "Download the URL [here](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts/${{ steps.upload-url-artifact.outputs.artifact-id }})" >> $GITHUB_STEP_SUMMARY
+                  echo "## Check job status" >> $GITHUB_STEP_SUMMARY
+                  echo "Download the URL [here](${{ steps.deploy.outputs.website-url }})" >> $GITHUB_STEP_SUMMARY
