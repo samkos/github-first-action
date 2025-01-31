@@ -1,20 +1,19 @@
-name: Click
+name: BMS links
 on: workflow_dispatch
 jobs:
     deploy:
         runs-on: ubuntu-latest
         steps:
-        - name: Get code
-            uses: actions/checkout@v3
-        - name: Output contents
-            run: ls
-        - name: compute link
-            id: deploy
-            uses: ./.github/actions/compose-links-javascript
-            with:
-                bucket: gha-custom-action-hosting
-                dist-folder: ./dist
-            # bucket-region: us-east-2
-        - name: Output information
-            run: |
-            echo "Live URL: ${{ steps.deploy.outputs.website-url }}"gi
+            - name: Get code
+              uses: actions/checkout@v3
+            - name: Output contents
+              run: ls
+            - name: compute link
+              id: deploy
+              uses: ./.github/actions/compose-links-javascript
+              with:
+                  bucket: gha-custom-action-hosting
+                  dist-folder: ./dist
+            - name: Output information
+              run: |
+              echo "Live URL: ${{ steps.deploy.outputs.website-url }}"gi
