@@ -1,0 +1,12 @@
+name: 'compose links to BMS'
+description: 'Compute BMS URL'
+inputs:
+  bucket:
+    description: 'The S3 bucket name.'
+    required: false
+outputs:
+  website-url:
+    description: 'The URL of the BMS job'
+runs:
+  using: 'node20'
+  main: 'main.js'
